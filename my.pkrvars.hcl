@@ -1,0 +1,6 @@
+image_id = "ocid1.image.oc1.ap-mumbai-1.aaaaaaaa2us32y2y2oeztbq7y2dnvucvfkukpghlqk3an576djgqqvxuueoa"
+username = "ubuntu"
+subnetId = "ocid1.subnet.oc1.ap-mumbai-1.aaaaaaaasfa3pz7vlhvkxefkqehcqcjhqfobxvfj6aeupcipx5quoxhj757q"
+COCID = "ocid1.tenancy.oc1..aaaaaaaa3zso4i67eafvoovz436qnzf6mrtyllp5hqjz73x6nxhh4isqotoa"
+AD = "ygVN:AP-MUMBAI-1-AD-1"
+myShape = "VM.Standard.E2.2"

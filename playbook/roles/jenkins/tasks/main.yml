@@ -1,0 +1,59 @@
+---
+ - name: doing update
+   apt:
+     update_cache: yes
+  
+ - name: Install some packages
+   action: apt name={{ item }} state=present
+   with_items: "{{ pkg }}"
+
+ - name: adding jenkins key to system
+   apt_key: 
+      url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+      state: present   
+
+ - name: adding jenkins repo to sourced.list     
+   apt_repository:
+      repo: deb http://pkg.jenkins.io/debian-stable binary/
+      state: present
+      filename: jenkins.list
+
+ - name: doing update
+   apt:
+     update_cache: yes
+
+ - name: install jenkins
+   action: apt name=jenkins state=latest
+   notify: Start jenkins 
+
+ - name: install apache
+   action: apt name=apache2 state=present
+   notify: enable apache service
+   
+ - name: apache start service
+   shell:
+   args: 
+     cmd: systemctl start apache2
+ 
+ - name: apache status check
+   shell:
+   args: 
+     cmd: systemctl status apache2
+   register: myresult
+
+ - name: jenkins status check
+   shell:
+   args: 
+     cmd: systemctl status jenkins
+   register: myresult2
+
+ - name: debugme
+   debug:
+      var: myresult
+
+ - name: debugme2
+   debug:
+      var: myresult2    
+  
+
+     

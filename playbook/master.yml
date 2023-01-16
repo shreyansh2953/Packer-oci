@@ -1,0 +1,7 @@
+---
+ - name: 'My test group'
+   hosts: localhost
+   become: true
+
+   roles:
+     - jenkins

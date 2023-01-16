@@ -1,0 +1,6 @@
+---
+
+ pkg: 
+   - openjdk-11-jdk
+   - wget
+   - net-tools
